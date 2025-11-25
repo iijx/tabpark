@@ -1,0 +1,72 @@
+@import "../var.less";
+
+*[theme-color="sky"] {
+
+  --i-bg-1: @--i-sky-1;
+  --i-bg-1-hover: color-mix(in srgb, var(--i-bg-1) 10%, transparent);
+  --i-bg-1-hover: color-mix(in srgb, var(--i-bg-1) 10%, transparent);
+  --i-bg-2: @--i-sky-2;
+  --i-bg-3: @--i-sky-3;
+  --i-bg-4: @--i-sky-4;
+  --i-bg-5: @--i-sky-5;
+  --i-bg-6: @--i-sky-6;
+  --i-bg-7: @--i-sky-7;
+  --i-bg-8: @--i-sky-8;
+  --i-bg-9: @--i-sky-9;
+  --i-bg-10: @--i-sky-10;
+
+  --i-primary-0: #fff;
+  --i-primary-1: @--i-sky-1;
+  --i-primary-2: @--i-sky-2;
+  --i-primary-3: @--i-sky-3;
+  --i-primary-4: @--i-sky-4;
+  --i-primary-5: @--i-sky-5;
+  --i-primary-6: @--i-sky-6;
+  --i-primary-7: @--i-sky-7;
+  --i-primary-8: @--i-sky-8;
+  --i-primary-9: @--i-sky-9;
+  --i-primary-10: @--i-sky-10;
+  --i-primary: var(--i-primary-6);
+  --i-primary-hover: color-mix(in srgb, var(--i-primary-7) 10%, transparent);
+  --i-primary-focus: var(--i-primary-7);
+  --i-primary-content: @--i-gray-94;
+
+  --i-fg-1: @--i-sky-10;
+  --i-fg-2: @--i-sky-9;
+  --i-fg-3: @--i-sky-8;
+}
+
+:root[dark-mode="true"] {
+   &[theme-color="sky"] {
+    --i-primary-0: #000;
+    --i-primary-1: @--i-sky-dark-1;
+    --i-primary-2: @--i-sky-dark-2;
+    --i-primary-3: @--i-sky-dark-3;
+    --i-primary-4: @--i-sky-dark-4;
+    --i-primary-5: @--i-sky-dark-5;
+    --i-primary-6: @--i-sky-dark-6;
+    --i-primary-7: @--i-sky-dark-7;
+    --i-primary-8: @--i-sky-dark-8;
+    --i-primary-9: @--i-sky-dark-9;
+    --i-primary-10: @--i-sky-dark-10;
+    --i-primary: var(--i-primary-6);
+    --i-primary-hover: color-mix(in srgb, var(--i-primary-7) 10%, transparent);
+    --i-primary-focus: var(--i-primary-7);
+    --i-primary-content: @--i-gray-94;
+
+    --i-bg-1: var(--i-primary-1);
+    --i-bg-2: var(--i-primary-2);
+    --i-bg-3: var(--i-primary-3);
+    --i-bg-4: var(--i-primary-4);
+    --i-bg-5: var(--i-primary-5);
+    --i-bg-6: var(--i-primary-6);
+    --i-bg-7: var(--i-primary-7);
+    --i-bg-8: var(--i-primary-8);
+    --i-bg-9: var(--i-primary-9);
+    --i-bg-10: var(--i-primary-10);
+
+    --i-fg-1: @--i-sky-dark-10;
+    --i-fg-2: @--i-sky-dark-9;
+    --i-fg-3: @--i-sky-dark-8;
+  }
+}

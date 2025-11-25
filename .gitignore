@@ -1,0 +1,118 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+
+# Local env files
+.env
+.env.*.local
+!.env.example
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sw?
+*.sublime-*
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.local
+*.cache
+.cache/
+*.bak
+*.tmp
+*.temp
+*.pid
+
+# Others
+# Production/preview output
+!.env.production
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# npm log directory
+.npm
+
+# Optional npm cache directory
+.npm-cache
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Parcel-bundler cache (if used)
+.cache/
+.parcel-cache/
+
+# Netlify
+.netlify/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# SvelteKit
+.svelte-kit/
+.vercel/
+
+# VS Code Server
+.vscode-server/
+
+# Storybook files
+.out/
+storybook-static/
+
+# Snapshots
+__snapshots__/
+*.snap
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Nuxt
+.nuxt/
+output/
+
+# Vuepress
+.vuepress/dist/
+
+# Quasar
+.quasar/
+
+# Firebase
+.firebaserc
+
+# Local npm
+.npmrc
+
+# Python (just in case)
+*.pyc
+__pycache__/
+
+# lock files (use only what your team prefers)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+

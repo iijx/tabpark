@@ -1,0 +1,119 @@
+@import "tailwindcss";
+/* @plugin "daisyui"; */
+
+:root {
+  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: Inter,-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,noto sans,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --t-header-top: 40px;
+  --t-header-height: 50px;
+  --t-header-pin-height: 32px;
+
+  
+}
+body {
+  color: var(--i-fg-1);
+}
+.bg-blur {
+  backdrop-filter: blur(4px);
+}
+
+
+.text-24 {
+  font-size: 24px;
+}
+
+
+.i-fade-enter-active{
+  transition: opacity 120ms ease-in;
+}
+.i-fade-leave-active {
+  transition: opacity 120ms ease-out;
+}
+
+
+.i-fade-enter-from,
+.i-fade-leave-to {
+  opacity: 0;
+}
+
+
+.i-zoom-enter-active {
+  transition: transform 200ms ease-in;
+}
+.i-zoom-leave-active {
+  transition: transform 200ms ease-out;
+}
+.i-zoom-enter-from,
+.i-zoom-leave-to {
+  transform: scale(0.3);
+}
+
+.i-fade-zoom-enter-active {
+  transition: transform 200ms ease-in, opacity 200ms ease-in;
+}
+.i-fade-zoom-leave-active {
+  transition: transform 200ms ease-out, opacity 200ms ease-out;
+}
+.i-fade-zoom-enter-from {
+  opacity: 0;
+  transform: scale(0.3);
+}
+.i-fade-zoom-leave-to {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.i-all-move,
+.i-all-enter-active,
+.i-all-leave-active {
+  transition: all 200ms ease-in-out;
+}
+
+.i-all-enter-from,
+.i-all-leave-to {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+
+/* 1. 声明过渡效果 */
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s linear;
+}
+
+/* 2. 声明进入和离开的状态 */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+}
+
+/* 3. 确保离开的项目被移除出了布局流
+      以便正确地计算移动时的动画效果。 */
+.fade-leave-active {
+  position: absolute;
+}
+
+
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter, .page-leave-to /* .page-leave-active 在Vue 2.1.8+中 */ {
+  opacity: 0;
+}
+

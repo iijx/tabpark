@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + Vue + TS</title>
+</head>
+<style>
+    html,body {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .app {
+        line-height: 1.6;
+        height: 100%;
+        padding: 16px;
+        font-size: 15px;
+        box-sizing: border-box;
+        color: #4a4a4a;
+    }
+    .title {
+        font-size: 28px;
+        color: #666;
+        font-weight: bold;
+        margin-bottom: 24px;
+    }
+    .code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #212121;
+    }
+</style>
+
+<body>
+    <div class="app">
+        <div class="title">验证码：{{code}}</div>
+        <section>
+            <div>您好，<span style="color: #006eff">{{email}}</span></div>
+            <div>您正在使用邮箱登录 PasteCuts, 登录验证码为：</div>
+                
+        </section>
+        <div class="codes">
+            <div class="code">{{code}}</div>
+        </div>
+        <section>如果您未请求此验证码，则可能是他人正在尝试访问 <a href="https://home.pastecuts.cn" style="color: #006eff">PasteCuts</a> 服务，请勿将此验证码转发或提供给任何人。</section>
+        <section style="margin-top: 24px;">此致</section>
+        <section><a href="https://home.pastecuts.cn" style="color: #006eff">PasteCuts</a> 账号团队敬上!</section>
+    </div>
+</body>
+
+
+</html>

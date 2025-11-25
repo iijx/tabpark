@@ -1,0 +1,38 @@
+
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="icon" type="image/svg+xml" href="/logo.svg">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vite + Vue + TS</title>
+  </head>
+  <style>
+    .main {
+      border-style: solid; border-width: thin; border-color:#dadce0; border-radius: 8px; padding: 40px 20px;
+    }
+    .ft24 {
+      font-size: 24px;
+    }
+    .content {
+      font-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 14px; color: rgba(0,0,0,0.87); line-height: 20px;padding-top: 20px; text-align: left;
+    }
+    .bold {
+      color: #006eff"
+    }
+    .code {
+      text-align: center; font-size: 36px; margin-top: 20px; line-height: 44px;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <div class="ft24">
+        <div>您的验证码为： <span class="code">{{code}}</span></div>
+      </div>
+      <div class="content">
+        <div>您正在使用<span class="bold">{{email}}</span> 登录 TabPark</div>
+        <div>此验证码将在 24小时后失效。</div>
+        <section>如果您未请求此验证码，则可能是他人正在尝试访问 <a href="https://tabpark.cn" style="color: #006eff">PasteCuts</a> 服务，请勿将此验证码转发或提供给任何人。</section>
+      </div>
+    </div>
+  </body>
+</html>

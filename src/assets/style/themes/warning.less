@@ -1,0 +1,58 @@
+@import "../var.less";
+
+*[theme-color="warning"] {
+
+  --i-bg-1: @--i-orange-1;
+  --i-bg-2: @--i-orange-2;
+  --i-bg-3: @--i-orange-3;
+  --i-bg-4: @--i-orange-4;
+  --i-bg-5: @--i-orange-5;
+  --i-bg-6: @--i-orange-6;
+  --i-bg-7: @--i-orange-7;
+  --i-bg-8: @--i-orange-8;
+  --i-bg-9: @--i-orange-9;
+  --i-bg-10: @--i-orange-10;
+
+  --i-primary-1: @--i-orange-1;
+  --i-primary-2: @--i-orange-2;
+  --i-primary-3: @--i-orange-3;
+  --i-primary-4: @--i-orange-4;
+  --i-primary-5: @--i-orange-5;
+  --i-primary-6: @--i-orange-6;
+  --i-primary-7: @--i-orange-7;
+  --i-primary-8: @--i-orange-8;
+  --i-primary-9: @--i-orange-9;
+  --i-primary-10: @--i-orange-10;
+  --i-primary: var(--i-primary-6);
+  --i-primary-hover: color-mix(in srgb, var(--i-primary-7) 10%, transparent);
+  --i-primary-focus: var(--i-primary-7);
+  --i-primary-content: @--i-gray-94;
+
+  --i-fg-1: @--i-orange-10;
+  --i-fg-2: @--i-orange-9;
+  --i-fg-3: @--i-orange-8;
+}
+
+
+:root[dark-mode="true"] {
+  &[theme-color="orange"] {
+   --i-primary-1: @--i-orange-dark-1;
+   --i-primary-2: @--i-orange-dark-2;
+   --i-primary-3: @--i-orange-dark-3;
+   --i-primary-4: @--i-orange-dark-4;
+   --i-primary-5: @--i-orange-dark-5;
+   --i-primary-6: @--i-orange-dark-6;
+   --i-primary-7: @--i-orange-dark-7;
+   --i-primary-8: @--i-orange-dark-8;
+   --i-primary-9: @--i-orange-dark-9;
+   --i-primary-10: @--i-orange-dark-10;
+   --i-primary: var(--i-primary-6);
+   --i-primary-hover: color-mix(in srgb, var(--i-primary-7) 10%, transparent);
+   --i-primary-focus: var(--i-primary-7);
+   // --i-primary-content: @--i-contrast-10;
+
+   --i-fg-1: @--i-orange-dark-10;
+   --i-fg-2: @--i-orange-dark-9;
+   --i-fg-3: @--i-orange-dark-8;
+ }
+}
