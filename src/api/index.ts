@@ -17,7 +17,7 @@ export const Api = {
   },
   getLoginCodeByEmail: (email: string) => {
     return http.post('/user/getLoginCodeByEmail', {
-        email,
+      email,
     });
   },
   loginByEmailCode: (email: string, code: string) => {
@@ -80,8 +80,8 @@ export const Api = {
     findById: (params: any) => {
       return http.post('/todo/addOrUpdateAsId', params);
     },
-    findAllByUserId: (params: any) => {
-      return http.get('/todo/findAllByUserId', params);
+    findAllByUserId: () => {
+      return http.get('/todo/findAllByUserId');
     }
   }
 }

@@ -7,7 +7,7 @@
     <!-- 全部 -->
     <NavItem :num="menuMapItems[IMenuValue.Total].length" :active="activeMenuValue === IMenuValue.Total" :icon="MenuMap[IMenuValue.Total].icon" :label="MenuMap[IMenuValue.Total].label" @click="setActiveMenuValue(MenuMap[IMenuValue.Total].value)" />
 
-    <!-- 看板：我的一天，本周，当月，今年 -->
+    <!-- 看板：我的一天，本周，本月，今年 -->
     <div class="border-t my-2 mx-8"></div>
     <NavItem v-for="item of todoMenuList1" :key="item.value" :num="menuMapItems[item.value].length"  :active="activeMenuValue === item.value" :icon="item.icon" :label="item.label" @click="setActiveMenuValue(item.value)" />
 

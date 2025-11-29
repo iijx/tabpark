@@ -10,9 +10,9 @@
 			<!-- <template #main-menu>
 				<LeftMenu />
 			</template> -->
-			<!-- <template #right-page>
+			<template #right-page>
 				<ToDoIndex />
-			</template> -->
+			</template>
 
 		</AppLayout>
 

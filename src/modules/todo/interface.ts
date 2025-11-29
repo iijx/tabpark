@@ -1,8 +1,9 @@
+import { v4 as uuidv4 } from 'uuid';
 import { getCurWeekLastTime, getCurMonthLastTime, getCurYearLastTime } from './use/util';
 import dayjs from 'dayjs';
 
 export class RepeatTodoItem {
-  id = '';
+  id = uuidv4();
   title = '';
   cycleTime = CircleType.EveryDay; // 循环周期
   stday = 0;                       // 循环周期里的第几天（从 0 开始）
@@ -18,60 +19,70 @@ export class RepeatTodoItem {
 }
 
 export class ToDoItem {
-  id = '';
+  id = uuidv4();
   title = '';
   tpUserId = '';
   status = TaskStatus.pending;
+  
+  parentId: string | null = null;
+  sortOrder = 0; 
+  isAllDay = false;
+
   fromCircle = false; // 来自循环任务的创建
   deadline = 0; // 时间戳格式, 0 表示未设置时间
   createdAt = Date.now();
-  indent = 0; // 缩进，用于表示子任务
+  indent = 0; // 缩进，用于表示子任务，兼容旧逻辑，后续可移除
   children: ToDoItem[] = [];
   isDel = false;
-  menu = IMenuValue.Today;
-  deadlinePickerValue = '';
-  constructor(obj?: ToDoItem) {
+  menu = IMenuValue.Today; // 待移除：视图状态不应持久化
+  deadlinePickerValue = ''; // 待移除：纯UI状态
+
+  constructor(obj?: Partial<ToDoItem>) {
     if (obj) {
-      if (obj.children) {
-        obj.children = obj.children.map(i => new ToDoItem(i))
-      }
       Object.assign(this, obj);
+      // 兼容逻辑：如果后端返回了 children，递归实例化
+      if (obj.children && Array.isArray(obj.children)) {
+        this.children = obj.children.map(i => new ToDoItem(i));
+      }
+      
+      // UI 状态初始化
       if (this.deadline) {
         this.deadlinePickerValue = dayjs(this.deadline).format('YYYY-MM-DD')
       }
-      // 因为 TaskStatus.finished 是手动操作的，那肯定以手动操作为准, 除此之外，都要手动判断
-      if (this.status !== TaskStatus.finished) {
-        // 如果有截止时间
-        if (this.deadline) {
-          if (this.deadline < Date.now()) {
-            this.status = TaskStatus.unfinish;
-          } else {
-            this.status = TaskStatus.pending;
-          }
-        }
-        // 没有截止时间就不管
-        else;
+      
+      // 动态计算过期状态 (仅在前端展示时计算，不修改数据源)
+      if (this.status !== TaskStatus.finished && this.deadline && this.deadline < Date.now()) {
+        // 注意：这里不直接修改 this.status，避免污染数据回传给后端。
+        // 实际 UI 渲染时应该判断 deadline < now
       }
     }
   }
   
+  // ... existing methods ...
   setTitle(v: string) {
     this.title = v;
     return this;
   }
+  
   addSubTodo() {
     const item = new ToDoItem();
+    item.parentId = this.id; // 设置父ID
     this.children.push(item);
     return this;
   }
+
   setMenu(v: IMenuValue) {
+    // ... 保持现有逻辑用于兼容 ...
     this.menu = v;
     if ([IMenuValue.Today, IMenuValue.Week, IMenuValue.Month, IMenuValue.Year].includes(v)) {
       this.autoSetDeadline();
     }
     return this;
   }
+  
+  // ... existing methods ...
   autoSetDeadline() {
+     // ... existing logic ...
     // 设置为今天 23:59:59 的时间戳
     if (this.menu === IMenuValue.Today) {
       this.deadline = new Date().setHours(23, 59, 59)
@@ -168,7 +179,7 @@ const MenuNearWeek:IMenu = {
 const MenuMonth:IMenu = {
   value: IMenuValue.Month,
   icon: 'month',
-  label: '当月',
+  label: '本月',
 }
 
 const MenuYear:IMenu = {

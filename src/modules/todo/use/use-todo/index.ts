@@ -3,7 +3,7 @@ import { ComputedRef } from 'vue';
 import { ToDoItem, IMenuValue, TaskStatus, MenuValueArr } from '../../interface';
 import { useMenu } from '../use-menu';
 import { isTo7Days, isToday, isToMonth, isToWeek, isToYear } from '../util';
-import {refreshTodoList, addItem, addCircleItem, state, repeatList, todoList, removeItem } from './state'; 
+import { refreshTodoList, addItem, addCircleItem, state, repeatList, todoList, removeItem } from './state';
 
 const MenuFilterItem = {
   [IMenuValue.Today]: () => {
@@ -25,12 +25,13 @@ const MenuFilterItem = {
     return todoList.value.filter((item) => item.status === TaskStatus.finished);
   },
   [IMenuValue.Unfinish]: () => {
-    return todoList.value.filter((item) => item.deadline <Date.now());
+    return todoList.value.filter((item) => item.deadline < Date.now());
   },
   [IMenuValue.Circle]: () => {
     return repeatList.value;
   },
   [IMenuValue.Total]: () => {
+    console.log("todoList.value", todoList.value)
     return todoList.value.filter((item) => item.status === TaskStatus.pending);
   },
 }
@@ -51,7 +52,7 @@ const initUserInfo = (userInfo: any) => {
 
 export const useTodo = () => {
   const { activeMenu, activeMenuValue } = useMenu();
-  
+
   if (!renderTodoList) {
     renderTodoList = computed(() => {
       const menufilter = MenuFilterItem[activeMenuValue.value];

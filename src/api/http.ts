@@ -36,7 +36,10 @@ export class Http {
   }
 
   public get(url: string, params?: any): Promise<any> {
-    return this.instance.get(url, { params });
+    return this.instance.get(url, { params }).then((res: any) => {
+      console.log("resrrrr", res)
+      return res;
+    });
   }
 
   public post(url: string, data?: any): Promise<any> {

@@ -29,6 +29,9 @@ export const appAction = {
       if (res.userInfo && res.userInfo.id) {
         appState.isLogin.value = true;
         appState.userState.init(res.userInfo);
+      } else {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
       }
 
       // 2. pins: 让 res.pin 数组按照 res.userInfo.pinIds 排序
