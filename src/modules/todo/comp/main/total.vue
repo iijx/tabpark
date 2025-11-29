@@ -33,7 +33,6 @@ import { appAction } from '@/compositions/use-app/app-action';
 import TodoItemCard from '../todo-item-card.vue';
 
 const { state, activeMenuValue, addCircleItem, addItem, renderTodoList } = useTodo();
-window['renderTodoList'] = renderTodoList;
 const input = ref('');
 
 const handleEnter = () => {
