@@ -1,9 +1,9 @@
 <template>
 	<div class="app" :style="style">
 		<AppLayout :flowPageCount="1">
-			<!-- <template #left-page>
-				<Sentences />
-			</template> -->
+			<template #left-page>
+				<MdCard />
+			</template>
 			<template #flow1>
 				<router-view />
 			</template>
@@ -36,7 +36,7 @@ import SettingDialog from '@/components/setting-dialog/index.vue';
 import InfoDialog from '@/containers/info-dialog.vue';
 import LeftMenu from '@/components/left-menu/index.vue';
 import { ThemeColorKeys } from './compositions/use-app/theme-color-state';
-import Sentences from '@/views/sentences/index.vue';
+import MdCard from './modules/mdcard/index.vue';
 import MainMenu from '@/components/main-menu/index.vue';
 import ToDoIndex from './modules/todo/index.vue';
 
