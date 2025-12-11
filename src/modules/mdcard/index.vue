@@ -5,7 +5,7 @@
       frameborder="0" 
       width="100%" 
       height="100%" 
-      allow="autoplay; fullscreen; geolocation; microphone; camera; *"
+      allow="autoplay; fullscreen; geolocation; microphone; camera; focus-without-user-activation; *"
     />
   </main>
 </template>
