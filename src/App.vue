@@ -1,17 +1,23 @@
 <template>
 	<div class="app" :style="style">
-		<AppLayout :flowPageCount="1">
+		<AppLayout :flowPageCount="2">
 			<template #left-page>
 				<MdCard />
 			</template>
 			<template #flow1>
 				<router-view />
 			</template>
+			<template #flow2>
+				<Affine />
+			</template>
 			<!-- <template #main-menu>
 				<LeftMenu />
 			</template> -->
 			<template #right-page>
 				<ToDoIndex />
+			</template>
+
+			<template #bottom-page>
 			</template>
 
 		</AppLayout>
@@ -35,6 +41,7 @@ import LoginDialog from '@/components/login-dialog.vue';
 import SettingDialog from '@/components/setting-dialog/index.vue';
 import InfoDialog from '@/containers/info-dialog.vue';
 import LeftMenu from '@/components/left-menu/index.vue';
+import Affine from './modules/affine/index.vue';
 import { ThemeColorKeys } from './compositions/use-app/theme-color-state';
 import MdCard from './modules/mdcard/index.vue';
 import MainMenu from '@/components/main-menu/index.vue';
