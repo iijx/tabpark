@@ -1,7 +1,7 @@
 <template>
   <main class="w-full h-full relative">
     <iframe
-      src="https://affine.tabpark.cn"
+      src="https://affine.tabpark.cn/workspace"
       frameborder="0" 
       width="100%" 
       height="100%" 
